@@ -190,7 +190,6 @@ public class SolrIndexWriter implements IndexWriter {
                 continue;
             }
 
-            float weight = e.getValue().getWeight();
             for (final Object field : e.getValue().getValues()) {
                 // normalise the string representation for a Date
                 Object val2 = convertIndexField(field);
@@ -198,15 +197,14 @@ public class SolrIndexWriter implements IndexWriter {
                 boolean isMultiValued = indexerMapping.isMultiValued(e.getKey().toString());
                 if (!isMultiValued) {
                     if (inputDoc.getField(key) == null) {
-                        inputDoc.addField(key, val2, weight);
+                        inputDoc.addField(key, val2);
                     }
                 } else {
-                    inputDoc.addField(key, val2, weight);
+                    inputDoc.addField(key, val2);
                 }
-            } // for
-        } // for
+            }
+        }
 
-        inputDoc.setDocumentBoost(doc.getWeight());
         inputDocs.add(inputDoc);
         totalAdds++;
 
@@ -223,9 +221,11 @@ public class SolrIndexWriter implements IndexWriter {
             field2 = DateTimes.isoInstantFormat((Instant) field);
         } else if (field instanceof org.apache.avro.util.Utf8) {
             field2 = field.toString();
+        } else {
+            field2 = field;
         }
 
-        return field;
+        return field2;
     }
 
     @Override

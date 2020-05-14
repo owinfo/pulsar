@@ -22,7 +22,7 @@
     <groupId>ai.platon</groupId>
     <artifactId>platon-parent</artifactId>
     <name>Platon Parent</name>
-    <version>2</version>
+    <version>3</version>
     <packaging>pom</packaging>
 
     <description/>
@@ -710,7 +710,7 @@
             <dependency>
                 <groupId>commons-lang</groupId>
                 <artifactId>commons-lang</artifactId>
-                <version>${commons-lang.version}</version>
+                <version>2.6</version>
             </dependency>
             <dependency>
                 <groupId>xml-apis</groupId>
@@ -720,7 +720,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
+                <version>2.4</version>
             </dependency>
 
             <dependency>
@@ -777,7 +777,7 @@
                 <version>${gson.version}</version>
             </dependency>
 
-            <!-- Net -->
+            <!-- Network -->
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
@@ -936,45 +936,44 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <!-- Gora Serialization -->
-        <avro.version>1.8.1</avro.version>
+        <avro.version>1.8.2</avro.version>
 
         <!--
-            Gora 0.8 supports :
-            Apache Avro 1.8.1
+            Gora 0.9 supports :
+
+            Apache Avro 1.8.2
+            Apache HBase 2.1.1
+            Apache Cassandra 3.11.0 (Datastax Java Driver 3.3.0)
+            Apache Solr 8.0.0
+            Apache Lucene 8.0.0
+            MongoDB (Mongo Java Driver) 3.5.0
             Apache Hadoop 2.5.2
-            Apache HBase 1.2.3
-            Apache Spark 1.4.1
+
             See more at: http://gora.apache.org/
          -->
-        <gora.version>0.8</gora.version>
-
-        <!-- HTML parsing -->
-        <xerces.version>2.9.1</xerces.version>
-        <nekohtml.version>1.9.19</nekohtml.version>
-        <!--<tika.version>[1.19.1,)</tika.version>-->
-        <tika.version>1.22</tika.version>
+        <gora.version>0.9</gora.version>
 
         <!-- Data Platform Dependencies -->
         <!--        <hadoop.version>2.5.2</hadoop.version>-->
         <!-- hadoop-mapreduce-client-core 2.5.2 have problems with guava- -->
         <!-- see https://stackoverflow.com/questions/36427291/illegalaccesserror-to-guavas-stopwatch-from-org-apache-hadoop-mapreduce-lib-inp -->
         <hadoop.version>2.7.2</hadoop.version>
-        <hbase.version>1.2.3</hbase.version>
-        <spark.version>2.3.0</spark.version>
+        <hbase.version>2.1.1</hbase.version>
 
         <!-- mongodb support -->
         <mongo.driver.version>3.5.0</mongo.driver.version>
-        <!-- default version does not support java11,
-            see https://github.com/yandex-qatools/postgresql-embedded/issues/153
-        -->
-        <de.flapdoodle.embed.process>2.0.5</de.flapdoodle.embed.process>
-        <mongo.embed.version>2.0.0</mongo.embed.version>
 
         <!-- Search Engine -->
-        <solr.version>6.1.0</solr.version>
+        <solr.version>8.0.0</solr.version>
+        <lucene.version>8.1.1</lucene.version>
 
-        <!--        <selenium.version>3.8.1</selenium.version>-->
         <selenium.version>4.0.0-alpha-4</selenium.version>
+
+        <!-- HTML parsing -->
+        <xerces.version>2.9.1</xerces.version>
+        <nekohtml.version>1.9.19</nekohtml.version>
+        <!--<tika.version>[1.19.1,)</tika.version>-->
+        <tika.version>1.22</tika.version>
 
         <!-- Persistence -->
         <hibernate.version>5.2.5.Final</hibernate.version>
@@ -990,7 +989,6 @@
         <spring-data.version>2.1.6.RELEASE</spring-data.version>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
 
-        <sigar.version>1.6.4</sigar.version>
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <tomcat.version>9.0.21</tomcat.version>
 
@@ -1013,12 +1011,9 @@
         <netty.version>4.1.48.Final</netty.version>
 
         <!-- Misc Dependencies -->
-        <commons-lang.version>2.6</commons-lang.version>
-        <commons-io.version>2.4</commons-io.version>
         <!--  Google core libraries for Java, include Multimaps, etc -->
         <guava.version>28.1-jre</guava.version>
         <gson.version>2.6.2</gson.version>
-        <lucene.version>8.1.1</lucene.version>
 
         <!-- Logging, metrics analyze -->
         <metrics.version>4.1.2</metrics.version>

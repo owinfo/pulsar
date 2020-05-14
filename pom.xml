@@ -16,14 +16,14 @@
     <parent>
         <groupId>ai.platon</groupId>
         <artifactId>platon-parent</artifactId>
-        <version>2</version>
+        <version>3</version>
         <relativePath>platon-parent/pom.xml</relativePath>
     </parent>
 
     <groupId>ai.platon.pulsar</groupId>
     <artifactId>pulsar</artifactId>
     <packaging>pom</packaging>
-    <version>1.5.2</version>
+    <version>1.5.2-gora-0.9</version>
 
     <name>Pulsar</name>
 

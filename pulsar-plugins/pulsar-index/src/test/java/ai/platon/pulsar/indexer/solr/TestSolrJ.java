@@ -71,8 +71,8 @@ public class TestSolrJ {
         // Now add something...
         SolrInputDocument doc = new SolrInputDocument();
         String docID = "1112211111";
-        doc.addField("id", docID, 1.0f);
-        doc.addField("name", "my name!", 1.0f);
+        doc.addField("id", docID);
+        doc.addField("name", "my name!");
 
         assertEquals(null, doc.getField("foo"));
         assertTrue(doc.getField("name").getValue() != null);
@@ -98,28 +98,28 @@ public class TestSolrJ {
         // Now add a few docs for facet testing...
         List<SolrInputDocument> docs = new ArrayList<>();
         SolrInputDocument doc2 = new SolrInputDocument();
-        doc2.addField("id", "2", 1.0f);
-        doc2.addField("inStock", true, 1.0f);
-        doc2.addField("price", 2, 1.0f);
-        doc2.addField("timestamp_dt", new java.util.Date(), 1.0f);
+        doc2.addField("id", "2");
+        doc2.addField("inStock", true);
+        doc2.addField("price", 2);
+        doc2.addField("timestamp_dt", new java.util.Date());
         docs.add(doc2);
         SolrInputDocument doc3 = new SolrInputDocument();
-        doc3.addField("id", "3", 1.0f);
-        doc3.addField("inStock", false, 1.0f);
-        doc3.addField("price", 3, 1.0f);
-        doc3.addField("timestamp_dt", new java.util.Date(), 1.0f);
+        doc3.addField("id", "3");
+        doc3.addField("inStock", false);
+        doc3.addField("price", 3);
+        doc3.addField("timestamp_dt", new java.util.Date());
         docs.add(doc3);
         SolrInputDocument doc4 = new SolrInputDocument();
-        doc4.addField("id", "4", 1.0f);
-        doc4.addField("inStock", true, 1.0f);
-        doc4.addField("price", 4, 1.0f);
-        doc4.addField("timestamp_dt", new java.util.Date(), 1.0f);
+        doc4.addField("id", "4");
+        doc4.addField("inStock", true);
+        doc4.addField("price", 4);
+        doc4.addField("timestamp_dt", new java.util.Date());
         docs.add(doc4);
         SolrInputDocument doc5 = new SolrInputDocument();
-        doc5.addField("id", "5", 1.0f);
-        doc5.addField("inStock", false, 1.0f);
-        doc5.addField("price", 5, 1.0f);
-        doc5.addField("timestamp_dt", new java.util.Date(), 1.0f);
+        doc5.addField("id", "5");
+        doc5.addField("inStock", false);
+        doc5.addField("price", 5);
+        doc5.addField("timestamp_dt", new java.util.Date());
         docs.add(doc5);
 
         upres = client.add(docs);

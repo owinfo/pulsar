@@ -293,6 +293,28 @@
       "default": {}
     },
     {
+      "name": "activeDomStat",
+      "type": {
+        "type": "map",
+        "values": ["null",
+            {
+              "name": "GActiveDomStat",
+              "type": "record",
+              "namespace": "ai.platon.pulsar.persist.gora.generated",
+              "fields" : [
+                  {"name": "ni", "type": "int", "default": 0},
+                  {"name": "na", "type": "int", "default": 0},
+                  {"name": "nnm", "type": "int", "default": 0},
+                  {"name": "nst", "type": "int", "default": 0},
+                  {"name": "w", "type": "int", "default": 0},
+                  {"name": "h", "type": "int", "default": 0}
+              ]
+            }
+        ]
+      },
+      "default": []
+    },
+    {
       "name": "pageModel",
       "type": {
         "type": "array",
